@@ -3,8 +3,8 @@ import { Constant } from "../../helper/index.js";
 import { authControllers } from "../../controller/index.js";
 
 const { apisRoutes } = Constant;
-const { auth } = apisRoutes;
-const { LOGIN, LOGOUT, SIGNUP, BASE_URL } = auth;
+const { auth,BASE_URL } = apisRoutes;
+const { LOGIN, LOGOUT, SIGNUP } = auth;
 const { login, logout, signup } = authControllers;
 const router = express.Router();
 
