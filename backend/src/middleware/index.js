@@ -1,3 +1,2 @@
-const Middleware = {}
-
-export default Middleware; 
+export {default as commonMiddleware} from "./common/common.middleware.js";
+export {default as routesMiddleware} from "./routes/routes.middlware.js";

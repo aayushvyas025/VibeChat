@@ -1,3 +1,1 @@
-const Routes = {} 
-
-export default Routes; 
+export {default as authRoutes} from "./auth/auth.route.js";

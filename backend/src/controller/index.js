@@ -1,3 +1,1 @@
-const Controller = {}
-
-export default Controller
+export {default as authControllers} from "./auth/auth.controller.js"; 
