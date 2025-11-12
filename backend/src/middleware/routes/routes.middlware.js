@@ -2,7 +2,9 @@ import { Constant } from "../../helper/index.js";
 import { authRoutes } from "../../routes/index.js";
 
 const {apisRoutes} = Constant;  
-const {BASE_URL} = apisRoutes; 
+const {auth} = apisRoutes; 
+const {BASE_URL} = auth;
+
 const routesMiddleware = {
     auth:(app) => {  
         app.use(BASE_URL, authRoutes)
