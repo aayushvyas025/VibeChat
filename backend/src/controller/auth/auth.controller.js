@@ -1,14 +1,12 @@
 
 const authControllers = {
- signupController:(request, response) => {
-    response.send("Singup Routes");
+ signup:(request, response) => {
 
  },
- loginController:(request,response) => {
-   response.send("Login Routes")
+ login:(request,response) => {
+
  },
- logoutController:(request, response) => {
-   response.send("Logout Routes"); 
+ logout:(request, response) => {
  }
 }
 
