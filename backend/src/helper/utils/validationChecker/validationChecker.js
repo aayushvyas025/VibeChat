@@ -15,19 +15,23 @@ const validationCheckers = {
 
     }
   },
-  signupValidations: {
-    signupFieldsValidation: (signupInfo, response) => {
+ signupFieldsValidation: (inputFields, response) => {
       if (
-        !signupInfo.fullName ||
-        !signupInfo.username ||
-        !signupInfo.password ||
-        !signupInfo.confirmPassword ||
-        !signupInfo.gender
+        !inputFields?.fullName ||
+        !inputFields?.username ||
+        !inputFields?.password ||
+        !inputFields?.confirmPassword ||
+        !inputFields?.gender
       ) {
         return response.status(400).json({success:false, message:"All fields are required"});
       }
-    },
   },
+  loginFieldsValidation:(inputFields, response) => { 
+    if(!inputFields.username && !inputFields.password) {
+      return response.status(400).json({success:false, message:"All fields are required"});
+    } 
+
+  }
 };
 
 export default validationCheckers;
