@@ -1,5 +1,5 @@
 import { connectToDB } from "../../../config/index.js";
-import Constant from "../../constant/constant.js";
+import Constant from "../../../../../constant/constant.js";
 
 const {envVariables} = Constant; 
 const {backendPort} = envVariables; 

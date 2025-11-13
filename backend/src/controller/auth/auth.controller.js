@@ -1,4 +1,8 @@
-import { Constant, validationCheckers } from "../../helper/index.js";
+import {
+  Constant,
+  generateToken,
+  validationCheckers,
+} from "../../helper/index.js";
 import { User } from "../../model/index.js";
 import bcrypt from "bcryptjs";
 
@@ -53,6 +57,7 @@ const authControllers = {
       });
 
       if (newUser) {
+        generateToken(newUser._id, response);
         await newUser.save();
 
         response.status(201).json({
