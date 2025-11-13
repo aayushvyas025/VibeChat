@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"; 
-import Constant from "../../../../../constant/constant.js";
+import { Constant } from "../../index.js";
 
 const {envVariables} = Constant;
 const {jwtSecret,nodeEnviornment} = envVariables; 
