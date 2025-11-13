@@ -1,14 +1,24 @@
+import { validationCheckers } from "../../helper/index.js";
+
+const {
+  passwordLengthValidation,
+  confirmPasswordValidation,
+  signupValidations,
+} = validationCheckers;
+const { signupFieldsValidation } = signupValidations;
+
 const authControllers = {
   signup: (request, response) => {
-    const { fullName, username, password, confirmPassword, gender, email } =
+    const { fullName, username, password, confirmPassword, gender } =
       request.body;
-    
-      if(!fullName || !username || !password || !confirmPassword || !gender || !email) {
-        return response.status(400).json({success:false, message:"All fields are required"});
-      }
 
-    
+    signupFieldsValidation(
+      { fullName, username, password, confirmPassword, gender },
+      response
+    );
 
+    passwordLengthValidation(password, response);
+    confirmPasswordValidation(password, response);
     try {
     } catch (error) {
       console.error(`Error While Signup User: ${error?.message}`);
