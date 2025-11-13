@@ -3,13 +3,13 @@ import { Constant } from "../../helper/index.js";
 import { authControllers } from "../../controller/index.js";
 
 const { apisRoutes } = Constant;
-const { auth,BASE_URL } = apisRoutes;
+const { auth} = apisRoutes;
 const { LOGIN, LOGOUT, SIGNUP } = auth;
 const { login, logout, signup } = authControllers;
 const router = express.Router();
 
-router.post(SIGNUP(BASE_URL), signup);
-router.post(LOGIN(BASE_URL), login);
-router.post(LOGOUT(BASE_URL), logout);
+router.post(SIGNUP, signup);
+router.post(LOGIN, login);
+router.post(LOGOUT, logout);
 
 export default router;

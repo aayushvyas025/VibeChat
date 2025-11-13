@@ -1,4 +1,6 @@
-import { validationCheckers } from "../../helper/index.js";
+import { Constant, validationCheckers } from "../../helper/index.js";
+import { User } from "../../model/index.js";
+import bcrypt from "bcryptjs";
 
 const {
   passwordLengthValidation,
@@ -6,9 +8,12 @@ const {
   signupValidations,
 } = validationCheckers;
 const { signupFieldsValidation } = signupValidations;
+const { apisRoutes } = Constant;
+const { avatarApis } = apisRoutes;
+const { maleUserAvatar, femaleUserAvatar } = avatarApis;
 
 const authControllers = {
-  signup: (request, response) => {
+  signup: async (request, response) => {
     const { fullName, username, password, confirmPassword, gender } =
       request.body;
 
@@ -18,8 +23,54 @@ const authControllers = {
     );
 
     passwordLengthValidation(password, response);
-    confirmPasswordValidation(password, response);
+    confirmPasswordValidation(password, confirmPassword, response);
     try {
+      // Checking if user was exist or not
+      const user = await User.findOne({ username });
+
+      if (user) {
+        return response
+          .status(409)
+          .json({ success: false, message: "User already Exist" });
+      }
+
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+
+      // Profile Picture
+      const boyProfilePic = maleUserAvatar(username);
+      const girlProfilePic = femaleUserAvatar(username);
+
+      const newUser = new User({
+        fullName,
+        username,
+        password: hashedPassword,
+        gender,
+        profilePic:
+          gender === "male" || gender === "Male"
+            ? boyProfilePic
+            : girlProfilePic,
+      });
+
+      if (newUser) {
+        await newUser.save();
+
+        response.status(201).json({
+          success: true,
+          message: "User signup successfully",
+          signupUser: {
+            _id: newUser._id,
+            fullName: newUser.fullName,
+            username: newUser.username,
+            gender: newUser.gender,
+            profilePic: newUser.profilePic,
+          },
+        });
+      } else {
+        response
+          .status(400)
+          .json({ success: true, message: "Invalid User Data" });
+      }
     } catch (error) {
       console.error(`Error While Signup User: ${error?.message}`);
       response

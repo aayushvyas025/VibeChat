@@ -8,11 +8,15 @@ const Constant = Object.freeze({
         backendPort:process.env.BACKEND_PORT
     },
     apisRoutes:{
-        BASE_URL:`vibechat/api/v1`,
+        BASE_URL:`/vibechat/api/v1`,
         auth: {
-            SIGNUP:(baseUrl) => `${baseUrl}/auth/signup`,
-            LOGIN:(baseUrl) => `${baseUrl}/auth/login`,
-            LOGOUT:(baseUrl) => `${baseUrl}/auth/logout`
+            SIGNUP: `/auth/signup`,
+            LOGIN:`/auth/login`,
+            LOGOUT:`/auth/logout`
+        },
+        avatarApis: {
+            maleUserAvatar:(username) => `https://avatar.iran.liara.run/public/boy?username=${username}`,
+            femaleUserAvatar:(username) => `https://avatar.iran.liara.run/public/girl?username=${username}`
         }
     }
 });
