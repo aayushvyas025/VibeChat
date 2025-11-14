@@ -19,6 +19,12 @@ const Constant = Object.freeze({
         avatarApis: {
             maleUserAvatar:(username) => `https://avatar.iran.liara.run/public/boy?username=${username}`,
             femaleUserAvatar:(username) => `https://avatar.iran.liara.run/public/girl?username=${username}`
+        },
+        conversation: {
+            
+        },
+        message: {
+            CREATE:`/message/send/:id`
         }
     }
 });
