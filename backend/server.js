@@ -9,7 +9,7 @@ jsonParser(app, express);
 parseCookies(app);
 routesMiddleware.auth(app);
 routesMiddleware.message(app);
-routesMiddleware.conversation(app); 
+routesMiddleware.user(app); 
 
 
 databaseConnection(app)

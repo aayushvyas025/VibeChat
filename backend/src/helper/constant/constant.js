@@ -20,7 +20,8 @@ const Constant = Object.freeze({
             maleUserAvatar:(username) => `https://avatar.iran.liara.run/public/boy?username=${username}`,
             femaleUserAvatar:(username) => `https://avatar.iran.liara.run/public/girl?username=${username}`
         },
-        conversation: {
+        user: { 
+            GET:`/users`
             
         },
         message: {
