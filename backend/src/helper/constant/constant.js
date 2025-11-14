@@ -24,7 +24,8 @@ const Constant = Object.freeze({
             
         },
         message: {
-            CREATE:`/message/send/:id`
+            CREATE:`/message/send/:id`,
+            GET:`/message/:id`
         }
     }
 });
