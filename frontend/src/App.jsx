@@ -1,9 +1,12 @@
-function App() {
+import { MainLayout } from "./layout";
 
+function App() {
   return (
-    <>
+    <> 
+    <MainLayout/>
+    
     </>
-  )
+  );
 }
 
-export default App
+export default App;
