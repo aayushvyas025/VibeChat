@@ -1,8 +1,10 @@
 import { MainLayout } from "../../layout";
 import {
+  ButtonComponent,
   FormComponent,
   HeadingComponent,
   InputComponent,
+  LinkComponent,
   TextComponent,
 } from "../../components";
 import { useState } from "react";
@@ -15,6 +17,10 @@ function LoginPage() {
 
   function submitFormHandler(event) {
     event.preventDefault();
+    setLoginForm({
+      username: "",
+      password: "",
+    });
   }
 
   return (
@@ -39,16 +45,36 @@ function LoginPage() {
               placeholder={"Enter Username"}
               style={"w-full input input-bordered h-10"}
               value={loginForm.username}
-              onChangeHandler={(event) => setLoginForm(event.target.value)}
+              onChangeHandler={(event) =>
+                setLoginForm({ ...loginForm, username: event.target.value })
+              }
             />
             <InputComponent
               label={"Password"}
               type={"password"}
               placeholder={"Enter Password"}
-              style={"w-full input input-borederd h-10"}
+              style={"w-full input input-bordered h-10"}
               value={loginForm.password}
-              onChangeHandler={(event) => setLoginForm(event.target.value)}
+              onChangeHandler={(event) =>
+                setLoginForm({ ...loginForm, password: event.target.value })
+              }
             />
+            <LinkComponent
+              href={"/signup"}
+              styling={
+                "text-sm hover:underline hover:text-blue-400 mt-2 inline-block"
+              }
+              linkText={"Don't have an account ?"}
+            />
+            <div>
+              <ButtonComponent
+              btnType="submit"
+                btnText={"Login"}
+                styling={
+                  "btn btn-block btn-sm mt-2 hover:bg-blue-400 hover:text-white"
+                }
+              />
+            </div>
           </FormComponent>
         </div>
       </div>
