@@ -1,5 +1,5 @@
 import { MainLayout } from '../../layout'
-import TextComponent from '../PagesHelperComponents/TextComponent'
+import TextComponent from '../TypographyComponents/TextComponent'
 
 function PageLoader() {
   return (
