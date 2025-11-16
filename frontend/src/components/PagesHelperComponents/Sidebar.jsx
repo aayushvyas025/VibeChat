@@ -4,15 +4,18 @@ import {
   SidebarUserComponent,
   ButtonComponent,
 } from "../index";
+import { BiLogOut } from "react-icons/bi";
 
 function Sidebar() {
   return (
-    <div>
+    <div className="border-r border-slate-500 p-4 flex flex-col">
       <SearchbarComponent />
       <DividerComponent styling={"divider px-3"} />
       <SidebarUserComponent />
       <DividerComponent styling={"divider px-3"} />
-      <ButtonComponent />
+      <div className="mt-auto">
+        <ButtonComponent btnIcon={BiLogOut} />
+      </div>
     </div>
   );
 }
