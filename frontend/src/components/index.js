@@ -19,4 +19,5 @@ export {default as ChatContainer} from "./ChatComponents/ChatContainer";
 export {default as ChatHeader} from "./ChatComponents/ChatHeader";
 export {default as MessageContainer} from "./ChatComponents/MessageContainer";
 export {default as MessageInput} from "./InputComponents/MessagesInput"; 
-export {default as Messages} from "./ChatComponents/Messages"
+export {default as Messages} from "./ChatComponents/Messages";
+export {default as NoChatSelected} from "./ChatComponents/NoChatSelected"
