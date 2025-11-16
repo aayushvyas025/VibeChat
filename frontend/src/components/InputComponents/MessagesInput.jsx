@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import { FormComponent,ButtonComponent } from "../index";
+import { BsSend } from "react-icons/bs";
 
-function MessagesInput() {
+function MessagesInput({placeholder}) {
   return (
-    <div>
-        
-    </div>
-  )
+    <FormComponent styling={"px-4 my-3"}>
+      <div className="w-full relative">
+        <input
+          type="text"
+          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white"
+          placeholder={placeholder}
+        />
+        <ButtonComponent type="submit" btnIcon={BsSend} styling={"absolute inset-y-0 end-0 flex items-center pe-3"} />
+      </div>
+    </FormComponent>
+  );
 }
 
-export default MessagesInput
+export default MessagesInput;
