@@ -9,9 +9,9 @@ function Sidebar() {
   return (
     <div>
       <SearchbarComponent />
-      <DividerComponent />
+      <DividerComponent styling={"divider px-3"} />
       <SidebarUserComponent />
-      <DividerComponent />
+      <DividerComponent styling={"divider px-3"} />
       <ButtonComponent />
     </div>
   );

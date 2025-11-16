@@ -1,8 +1,8 @@
 import React from 'react'
 
-function DividerComponent() {
+function DividerComponent({styling}) {
   return (
-    <div className='divider px-3'></div>
+    <div className={styling}></div>
   )
 }
 

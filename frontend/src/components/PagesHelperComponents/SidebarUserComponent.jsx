@@ -1,8 +1,11 @@
 import React from 'react'
+import {ChatUserComponent} from "../index";
 
 function SidebarUserComponent() {
   return (
-    <div>SiderbarUserComponent</div>
+    <div className='py-2 flex flex-col overflow-auto'>
+      <ChatUserComponent />
+    </div>
   )
 }
 

@@ -9,5 +9,10 @@ export {default as CheckboxComponent} from "./PagesHelperComponents/CheckboxComp
 export {default as Sidebar} from "./PagesHelperComponents/Sidebar"; 
 export {default as MessageComponent} from "./PagesHelperComponents/MessageContainer";
 export {default as SidebarUserComponent} from "./PagesHelperComponents/SidebarUserComponent";
-export {default as DividerComponent} from "./Static Component/DividerComponent"
-
+export {default as DividerComponent} from "./Static Component/DividerComponent";
+export {default as IconComponent} from "./PagesHelperComponents/IconComponent";
+export {default as SearchbarComponent} from "./PagesHelperComponents/SearchbarComponent";
+export {default as Conversation} from "./PagesHelperComponents/Conversation";
+export {default as ChatUserComponent} from "./PagesHelperComponents/ChatUserComponent";
+export {default as AvatarComponent} from "./PagesHelperComponents/AvatarComponent";
+export {default as UsernameComponent} from "./PagesHelperComponents/UsernameComponent"

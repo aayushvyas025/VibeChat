@@ -1,6 +1,6 @@
-function FormComponent({children, onSubmitHandler}) {
+function FormComponent({children, onSubmitHandler, styling}) {
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form onSubmit={onSubmitHandler} className={styling}>
         {children}
     </form>
   )
