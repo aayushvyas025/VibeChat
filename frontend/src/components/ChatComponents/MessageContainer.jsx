@@ -1,7 +1,11 @@
+import {Messages, MessageInput} from "../index";
+
 function MessageContainer() {
   return (
-    <div>
-    </div>
+    <>
+    <Messages />
+    <MessageInput />
+    </>
   )
 }
 

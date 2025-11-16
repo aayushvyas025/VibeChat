@@ -1,12 +1,13 @@
-import { Sidebar } from "../../components";
-import { MainLayout } from "../../layout";
+import { ChatContainer, Sidebar } from "../../components";
+import { MainLayout, PagesLayout } from "../../layout";
 
 function HomePage() {
   return (
     <MainLayout>
-      <div className=" flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-blur-lg bg-opacity-0">
+      <PagesLayout pagelayout={"flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-blur-lg bg-opacity-0"}>
         <Sidebar />
-      </div>
+        <ChatContainer />   
+      </PagesLayout>
     </MainLayout>
   );
 }

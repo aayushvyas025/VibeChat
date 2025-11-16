@@ -1,4 +1,4 @@
-import { MainLayout } from "../../layout";
+import { MainLayout, PagesLayout } from "../../layout";
 import {
   ButtonComponent,
   FormComponent,
@@ -26,7 +26,11 @@ function LoginPage() {
   return (
     <MainLayout>
       <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-        <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+        <PagesLayout
+          pagelayout={
+            "w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0"
+          }
+        >
           <HeadingComponent
             headingLevel={"h1"}
             styling={"text-3xl font-semibold text-center text-gray-300"}
@@ -68,7 +72,7 @@ function LoginPage() {
             />
             <div>
               <ButtonComponent
-              btnType="submit"
+                btnType="submit"
                 btnText={"Login"}
                 styling={
                   "btn btn-block btn-sm mt-2 hover:bg-blue-400 hover:text-white"
@@ -76,7 +80,7 @@ function LoginPage() {
               />
             </div>
           </FormComponent>
-        </div>
+        </PagesLayout>
       </div>
     </MainLayout>
   );
