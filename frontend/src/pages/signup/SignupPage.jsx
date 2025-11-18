@@ -1,8 +1,8 @@
 import { MainLayout, PagesLayout } from "../../layout";
 import {
   ButtonComponent,
-  CheckboxComponent,
   FormComponent,
+  GenderCheckboxComponent,
   HeadingComponent,
   InputComponent,
   LinkComponent,
@@ -28,7 +28,13 @@ function SignupPage() {
       confirmPassword: "",
       gender: "",
     });
-  }
+  };
+
+  function checkboxHandleChange(userGender) { 
+    setSignupForm({...signupForm, gender:userGender})
+
+  }  
+  
   return (
     <MainLayout>
       <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
@@ -88,10 +94,7 @@ function SignupPage() {
                 })
               }
             />
-           <div className="flex">
-            <CheckboxComponent  label={"Male"}/>
-            <CheckboxComponent label={"Female"} />
-           </div>
+            <GenderCheckboxComponent userGender={signupForm.gender} onCheckboxChange={checkboxHandleChange} />
             <LinkComponent
               href={"/login"}
               styling={

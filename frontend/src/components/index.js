@@ -20,4 +20,5 @@ export {default as ChatHeader} from "./ChatComponents/ChatHeader";
 export {default as MessageContainer} from "./ChatComponents/MessageContainer";
 export {default as MessageInput} from "./InputComponents/MessagesInput"; 
 export {default as Messages} from "./ChatComponents/Messages";
-export {default as NoChatSelected} from "./ChatComponents/NoChatSelected"
+export {default as NoChatSelected} from "./ChatComponents/NoChatSelected";
+export {default as GenderCheckboxComponent} from "./InputComponents/GenderCheckboxComponent"
