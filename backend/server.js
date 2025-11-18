@@ -2,11 +2,13 @@ import express from "express";
 import { databaseConnection } from "./src/helper/index.js";
 import { commonMiddleware, routesMiddleware } from "./src/middleware/index.js";
 
-const {jsonParser, parseCookies} = commonMiddleware; 
+const {jsonParser, parseCookies, corsConnection} = commonMiddleware; 
 
 const app = express(); 
 jsonParser(app, express);
 parseCookies(app);
+corsConnection(app);
+
 routesMiddleware.auth(app);
 routesMiddleware.message(app);
 routesMiddleware.user(app); 
