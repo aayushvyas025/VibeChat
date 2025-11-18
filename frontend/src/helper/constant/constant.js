@@ -1,8 +1,21 @@
 const Constant = {
   applicationContent: {
-    profilePicHolder:"https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png"
-  }
-    
-}
+    profilePicHolder:
+      "https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png",
+  },
+  envVariables: {
+    backendURl:
+      import.meta.env.VITE_APPLICATION_MODE === "development"
+        ? import.meta.env.VITE_BACKEND_BASE_URL
+        : "/vibechat/api/v1",
+  },
+  apiRoutes: {
+    authRoutes: {
+      SIGNUP:`/auth/signup`,
+      LOGIN:`/auth/login`,
+      LOGOUT:`/auth/logout`
+    }
+  },
+};
 
-export default Constant; 
+export default Constant;
