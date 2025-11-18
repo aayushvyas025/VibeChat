@@ -29,8 +29,8 @@ const {signupSuccess} = apiSuccessResponse;
         setLoading(false);
     } 
 
-    return {loading, signupApi}
-  };
+};
+return {loading, signupApi}
 }
 
 export default useSignup; 

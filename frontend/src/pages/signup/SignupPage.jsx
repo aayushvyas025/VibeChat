@@ -21,7 +21,7 @@ function SignupPage() {
     gender: "",
   });
   
-  const {loading , signupApi} = useSignup; 
+  const {loading , signupApi} = useSignup(); 
 
   async function submitFormHandler(event) {
     event.preventDefault();
