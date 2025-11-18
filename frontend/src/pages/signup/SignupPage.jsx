@@ -9,6 +9,8 @@ import {
   TextComponent,
 } from "../../components";
 import { useState } from "react";
+import { useSignup } from "../../hooks";
+
 
 function SignupPage() {
   const [signupForm, setSignupForm] = useState({
@@ -18,9 +20,12 @@ function SignupPage() {
     confirmPassword: "",
     gender: "",
   });
+  
+  const {loading , signupApi} = useSignup; 
 
-  function submitFormHandler(event) {
+  async function submitFormHandler(event) {
     event.preventDefault();
+    await signupApi(signupForm);
     setSignupForm({
       fullName: "",
       username: "",
@@ -34,7 +39,7 @@ function SignupPage() {
     setSignupForm({...signupForm, gender:userGender})
 
   }  
-  
+
   return (
     <MainLayout>
       <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
