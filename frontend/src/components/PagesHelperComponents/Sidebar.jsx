@@ -14,7 +14,7 @@ function Sidebar() {
       <SidebarUserComponent />
       <DividerComponent styling={"divider px-3"} />
       <div className="mt-auto">
-        <ButtonComponent btnIcon={BiLogOut} />
+        <ButtonComponent btnIcon={BiLogOut} btnIconSize={5} />
       </div>
     </div>
   );
