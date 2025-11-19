@@ -2,8 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, SignupPage } from "../../pages";
 import { Suspense } from "react";
 import { PageLoader } from "../../components";
+import { useAuthContext } from "../../context/auth context/AuthContextProvider";
 
 function MainRoutes() {
+  const {authUser} = useAuthContext(); 
   return (
     <Suspense fallback={<PageLoader/>}>
       <Routes>
