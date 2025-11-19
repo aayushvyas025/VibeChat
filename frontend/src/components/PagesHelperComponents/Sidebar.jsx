@@ -2,7 +2,7 @@ import {
   DividerComponent,
   SearchbarComponent,
   SidebarUserComponent,
-  ButtonComponent,
+  LogoutButtonComponent,
 } from "../index";
 import { BiLogOut } from "react-icons/bi";
 
@@ -13,9 +13,7 @@ function Sidebar() {
       <DividerComponent styling={"divider px-3"} />
       <SidebarUserComponent />
       <DividerComponent styling={"divider px-3"} />
-      <div className="mt-auto">
-        <ButtonComponent btnIcon={BiLogOut} btnIconSize={5} />
-      </div>
+      <LogoutButtonComponent />
     </div>
   );
 }
