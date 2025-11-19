@@ -12,7 +12,7 @@ const { logoutSuccess } = apiSuccessResponse;
 
 function useLogout() {
   const [loading, setLoading] = useState(false);
-  const { setAuthUser } = useAuthContext;
+  const { setAuthUser } = useAuthContext();
   const logoutApi = async () => {
     setLoading(true);
     try {
@@ -22,7 +22,7 @@ function useLogout() {
       }
       localStorage.removeItem("authenticated-user")
      setAuthUser(null);
-      handleApiSuccess(response?.data?.message || "User Logout Successfully");
+      handleApiSuccess(response?.data?.message || logoutSuccess);
     } catch (error) {
       console.error(`Error While Logout User: ${error.message}`);
       handleApiError(

@@ -1,15 +1,17 @@
 import { IconComponent } from "../index";
 function ButtonComponent({
+  children,
   btnType = "button",
   styling,
   btnText,
   btnIcon,
   btnIconSize,
   btnIconStyle,
-  onClickHandler
+  onClickHandler,
+  disabled
 }) {
   return (
-    <button type={btnType} className={styling} onClick={onClickHandler}>
+    <button type={btnType} className={styling} onClick={onClickHandler} disabled={disabled}>
       {btnText}
       {btnIcon && (
         <IconComponent
@@ -18,6 +20,7 @@ function ButtonComponent({
           styling={btnIconStyle}
         />
       )}
+      {children}
     </button>
   );
 }

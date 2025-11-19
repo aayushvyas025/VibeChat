@@ -1,18 +1,20 @@
 import React from "react";
 import { BiLogOut } from "react-icons/bi";
-import { ButtonComponent, IconComponent, SpinnerLoader } from "../index";
+import { ButtonComponent,IconComponent,SpinnerLoader } from "../index";
 import { useLogout } from "../../hooks";
 
 function LogoutButtonComponent() {
-  const { loading, logout } = useLogout();
+  const { loading, logoutApi } = useLogout();
 
   return (
     <div className="mt-auto">
-      <ButtonComponent
-        btnIconSize={5}
-        onClickHandler={logout}
-        btnText={!loading ? <IconComponent icon={BiLogOut} iconSize={5} /> : <SpinnerLoader />}
-      />
+      <ButtonComponent btnType="button" onClickHandler={logoutApi}>
+        {!loading ? (
+          <IconComponent icon={BiLogOut} iconSize={5} />
+        ): (
+          <SpinnerLoader />
+        )}
+      </ButtonComponent>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { useAuthContext } from "../../hooks";
 
 function MainRoutes() {
   const { authUser } = useAuthContext();
-  console.log(authUser);
+
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
