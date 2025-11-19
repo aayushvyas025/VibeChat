@@ -25,7 +25,7 @@ function useSignup() {
       const signupUser = response?.data?.signupUser;
 
       if (!signupUser) {
-        throw new Error(`Invalid response from the Server`);
+        throw new Error(`Invalid response from the Server: ${response?.error}`);
       }
       localStorage.setItem("authenticated-user", JSON.stringify(signupUser));
       setAuthUser(signupUser);
