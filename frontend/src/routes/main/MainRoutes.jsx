@@ -1,17 +1,27 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { HomePage, LoginPage, SignupPage } from "../../pages";
 import { Suspense } from "react";
 import { PageLoader } from "../../components";
-import { useAuthContext } from "../../context/auth context/AuthContextProvider";
+import { useAuthContext } from "../../hooks";
 
 function MainRoutes() {
-  const {authUser} = useAuthContext(); 
+  const { authUser } = useAuthContext();
+  console.log(authUser);
   return (
-    <Suspense fallback={<PageLoader/>}>
+    <Suspense fallback={<PageLoader />}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/"
+          element={authUser ? <HomePage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/signup"
+          element={authUser ? <Navigate to="/" /> : <SignupPage />}
+        />
+        <Route
+          path="/login"
+          element={authUser ? <Navigate to="/" /> : <LoginPage />}
+        />
       </Routes>
     </Suspense>
   );

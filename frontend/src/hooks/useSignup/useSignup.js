@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API } from "../../config";
 import { Constant, inputValidations, handleApi } from "../../helper";
-import useAuthContext from "../index";
+import {useAuthContext} from "../index";
 
 const { apiRoutes, applicationContent } = Constant;
 const { authRoutes } = apiRoutes;
