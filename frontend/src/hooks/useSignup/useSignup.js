@@ -21,7 +21,12 @@ const {signupSuccess} = apiSuccessResponse;
     setLoading(true);
     try {
       const response = API.post(SIGNUP, signupinfo);
+      
+      if(response?.error) {
+        throw new Error(response?.error)
+      }
       handleApiSuccess(signupSuccess)
+
     } catch (error) {
       console.error(`Error While Signup User: ${error?.message}`);
       handleApiError(error?.response?.message);
