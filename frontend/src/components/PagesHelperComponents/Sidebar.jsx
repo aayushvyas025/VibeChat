@@ -4,7 +4,7 @@ import {
   SidebarUserComponent,
   LogoutButtonComponent,
 } from "../index";
-import { BiLogOut } from "react-icons/bi";
+
 
 function Sidebar() {
   return (

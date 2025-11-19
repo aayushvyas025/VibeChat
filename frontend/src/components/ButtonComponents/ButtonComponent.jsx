@@ -6,9 +6,10 @@ function ButtonComponent({
   btnIcon,
   btnIconSize,
   btnIconStyle,
+  onClickHandler
 }) {
   return (
-    <button type={btnType} className={styling}>
+    <button type={btnType} className={styling} onClick={onClickHandler}>
       {btnText}
       {btnIcon && (
         <IconComponent
