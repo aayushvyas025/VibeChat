@@ -7,7 +7,7 @@ const Constant = Object.freeze({
         mongodbUri:process.env.MONGODB_URI,
         backendPort:process.env.BACKEND_PORT,
         jwtSecret:process.env.JWT_SECRET,
-        nodeEnviornment:process.env.NODE_ENVIORNMENT,
+        nodeEnvironment:process.env.NODE_ENVIORNMENT,
         frontendUrl:process.env.FRONTEND_URL
     },
     apisRoutes:{

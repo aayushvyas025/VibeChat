@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { Constant } from "../../index.js";
 
 const {envVariables} = Constant;
-const {jwtSecret,nodeEnviornment} = envVariables; 
+const {jwtSecret,nodeEnvironment} = envVariables; 
 
 const generateToken = async(userId, response) => {
     // token was created 
@@ -14,7 +14,7 @@ const generateToken = async(userId, response) => {
         maxAge:1*24*60*60*1000,
         httpOnly:true, // Prevent XSS attacks cross-site scripting attacks 
         sameSite:"strict", // CSRF attacks cross-site request forgery attacks
-        secure:nodeEnviornment === "production"
+        secure:nodeEnvironment === "production"
     }); 
 
     return token; 
