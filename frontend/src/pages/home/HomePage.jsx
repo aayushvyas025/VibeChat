@@ -1,8 +1,12 @@
 import { ChatContainer, Sidebar, NoChatSelected } from "../../components";
+import { useAuthContext } from "../../hooks";
 import { MainLayout, PagesLayout } from "../../layout";
+import { useConversation } from "../../store";
 
 function HomePage() {
-  const noChatSelected = true;
+  const {authUser} = useAuthContext()
+  const {selectedUser} = useConversation();
+  
   return (
     <MainLayout>
       <PagesLayout
@@ -11,8 +15,8 @@ function HomePage() {
         }
       >
         <Sidebar />
-        {noChatSelected ? (
-          <NoChatSelected username={"Aayush Vyas"} />
+        {!selectedUser ? (
+          <NoChatSelected username={authUser.fullName} />
         ) : (
           <>
             <ChatContainer />
