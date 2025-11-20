@@ -9,7 +9,7 @@ function AvatarComponent({ userOnline, userProfile }) {
     <div className="avatar online">
       <div className={`w-12 rounded-full`}>
         <img
-          src={ profilePicHolder || userProfile}
+          src={userProfile || profilePicHolder}
           alt="User Avatar"
         />
       </div>

@@ -115,7 +115,7 @@ function SignupPage() {
                   "btn btn-block btn-sm mt-2 hover:bg-blue-400 hover:text-white"
                 }
                 disabled={loading}
-              > {loading ? <SpinnerLoader/> : "Signup" } </ButtonComponent>
+              > {loading ? <SpinnerLoader type={"loading loading-spinner"}/> : "Signup" } </ButtonComponent>
             </div>
           </FormComponent>
                 </PagesLayout>

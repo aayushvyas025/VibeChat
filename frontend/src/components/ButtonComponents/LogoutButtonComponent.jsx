@@ -12,7 +12,7 @@ function LogoutButtonComponent() {
         {!loading ? (
           <IconComponent icon={BiLogOut} iconSize={5} />
         ): (
-          <SpinnerLoader />
+          <SpinnerLoader type={"loading loading-spinner"} />
         )}
       </ButtonComponent>
     </div>

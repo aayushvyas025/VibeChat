@@ -83,7 +83,7 @@ function LoginPage() {
                 }
                 disabled={loading}
               >
-                {loading ? <SpinnerLoader /> : "Login"}
+                {loading ? <SpinnerLoader type={"loading loading-spinner"} /> : "Login"}
               </ButtonComponent>
             </div>
           </FormComponent>

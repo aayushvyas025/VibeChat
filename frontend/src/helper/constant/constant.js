@@ -6,12 +6,13 @@ const Constant = Object.freeze({
       successResponse: {
         signupSuccess:"User Signup Successfully",
         logoutSuccess:"User Logout Successfully",
-        loginSuccess:"User Login Successfully"
+        loginSuccess:"User Login Successfully",
       },
       errorResponse: {
         signupError:"Error While Signup User",
         loginError:"Error Invalid Credentials",
-        logoutError:"Error While Logout User"
+        logoutError:"Error While Logout User",
+        getUsersError:"Error While Fetching Users"
       }
     }
   },
@@ -26,6 +27,12 @@ const Constant = Object.freeze({
       SIGNUP:`/auth/signup`,
       LOGIN:`/auth/login`,
       LOGOUT:`/auth/logout`
+    },
+    messageRoutes:{
+
+    },
+    userRoutes:{
+      GET:`/users`
     }
   },
 });

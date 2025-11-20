@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SpinnerLoader() {
+function SpinnerLoader({type}) {
   return (
-    <span className='loading loading-spinner' />
+    <span className={type} />
   )
 }
 
