@@ -29,7 +29,7 @@ function useSignup() {
       handleApiSuccess(successResponse.signupSuccess);
     } catch (error) {
       console.error(`Error While Signup User: ${error?.message}`);
-      handleApiError(error?.response?.data?.message || errorResponse.signupError);
+      handleApiError(error.response?.data?.message || errorResponse.signupError);
     } finally {
       setLoading(false);
     }

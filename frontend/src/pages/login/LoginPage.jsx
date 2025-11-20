@@ -5,9 +5,11 @@ import {
   HeadingComponent,
   InputComponent,
   LinkComponent,
+  SpinnerLoader,
   TextComponent,
 } from "../../components";
 import { useState } from "react";
+import { useLogin } from "../../hooks";
 
 function LoginPage() {
   const [loginForm, setLoginForm] = useState({
@@ -15,8 +17,11 @@ function LoginPage() {
     password: "",
   });
 
-  function submitFormHandler(event) {
+  const { loading, loginApi } = useLogin();
+
+  async function submitFormHandler(event) {
     event.preventDefault();
+    await loginApi(loginForm);
     setLoginForm({
       username: "",
       password: "",
@@ -73,11 +78,13 @@ function LoginPage() {
             <div>
               <ButtonComponent
                 btnType="submit"
-                btnText={"Login"}
                 styling={
                   "btn btn-block btn-sm mt-2 hover:bg-blue-400 hover:text-white"
                 }
-              />
+                disabled={loading}
+              >
+                {loading ? <SpinnerLoader /> : "Login"}
+              </ButtonComponent>
             </div>
           </FormComponent>
         </PagesLayout>

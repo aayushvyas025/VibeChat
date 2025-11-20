@@ -9,7 +9,7 @@ const {successResponse, errorResponse} = apiSuccessResponse;
 const {authRoutes} = apiRoutes; 
 const {handleLoginInputErrors,apiError} = inputValidations; 
 const {LOGIN} = authRoutes; 
-const {handleApiSuccess} = handleApi;
+const {handleApiSuccess, handleApiError} = handleApi;
 
 
 function useLogin() {
@@ -22,13 +22,14 @@ const {setAuthUser} = useAuthContext();
     try {
         const response = await API.post(LOGIN, loginInfo);
         const loginUser = response?.data?.loginUser; 
+        console.log(response)
         apiError(loginUser)
          localStorage.setItem("authenticated-user", JSON.stringify(loginUser));
          setAuthUser(loginUser); 
          handleApiSuccess(successResponse.loginSuccess);
     } catch (error) {
         console.error(`Error While login User: ${error.message}`);
-        handleApiError(error?.response?.data?.message || errorResponse.loginError)
+        handleApiError(error.response?.data?.message || errorResponse.loginError)
     }finally {
         setLoading(false)
     }

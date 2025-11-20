@@ -26,7 +26,7 @@ function useLogout() {
     } catch (error) {
       console.error(`Error While Logout User: ${error.message}`);
       handleApiError(
-        error?.response?.data?.message || errorResponse.logoutError
+        error.response?.data?.message || errorResponse.logoutError
       );
     } finally {
       setLoading(false);
