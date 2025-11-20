@@ -3,8 +3,16 @@ const Constant = Object.freeze({
     profilePicHolder:
       "https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png",
     apiSuccessResponse: {
-      signupSuccess:"User Signup Successfully",
-      logoutSuccess:"User Logout Successfully"
+      successResponse: {
+        signupSuccess:"User Signup Successfully",
+        logoutSuccess:"User Logout Successfully",
+        loginSuccess:"User Login Successfully"
+      },
+      errorResponse: {
+        signupError:"Error While Signup User",
+        loginError:"Error While Login User",
+        logoutError:"Error While Logout User"
+      }
     }
   },
   envVariables: {

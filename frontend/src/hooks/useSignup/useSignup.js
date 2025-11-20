@@ -6,33 +6,30 @@ import {useAuthContext} from "../index";
 const { apiRoutes, applicationContent } = Constant;
 const { authRoutes } = apiRoutes;
 const { SIGNUP } = authRoutes;
-const { handleSignupInputErrors } = inputValidations;
+const { handleSignupInputErrors,apiError } = inputValidations;
 const { handleApiError, handleApiSuccess } = handleApi;
 const { apiSuccessResponse } = applicationContent;
-const { signupSuccess } = apiSuccessResponse;
+const { successResponse, errorResponse } = apiSuccessResponse;
 
 function useSignup() {
   const [loading, setLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
 
-  const signupApi = async (signupinfo) => {
-    const success = handleSignupInputErrors(signupinfo);
+  const signupApi = async (signupInfo) => {
+    const success = handleSignupInputErrors(signupInfo);
     if (!success) return;
 
     setLoading(true);
     try {
-      const response = await API.post(SIGNUP, signupinfo);
+      const response = await API.post(SIGNUP, signupInfo);
       const signupUser = response?.data?.signupUser;
-
-      if (!signupUser) {
-        throw new Error(`Invalid response from the Server: ${response?.error}`);
-      }
+      apiError(signupUser);
       localStorage.setItem("authenticated-user", JSON.stringify(signupUser));
       setAuthUser(signupUser);
-      handleApiSuccess(signupSuccess);
+      handleApiSuccess(successResponse.signupSuccess);
     } catch (error) {
       console.error(`Error While Signup User: ${error?.message}`);
-      handleApiError(error?.response?.data?.message || "Error While Signup User");
+      handleApiError(error?.response?.data?.message || errorResponse.signupError);
     } finally {
       setLoading(false);
     }

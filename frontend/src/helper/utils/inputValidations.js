@@ -25,6 +25,24 @@ const inputValidations = {
 
     return true; 
   },
+  handleLoginInputErrors:(loginInfo) => {
+    if(!loginInfo.username.trim() || !loginInfo.password.trim()){
+      toast.error("Please fill all the fields"); 
+      return false; 
+    }
+
+    if(loginInfo.password.length < 6){
+      toast.error("Password should be 6 characters long");
+      return false;
+    }
+
+    return true; 
+  }, 
+  apiError:(response) => {
+    if(!response) {
+      throw new Error("Invalid response from the Server")
+    }
+  }
 };
 
 export default inputValidations;

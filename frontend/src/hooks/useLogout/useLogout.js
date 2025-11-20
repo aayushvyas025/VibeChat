@@ -8,7 +8,7 @@ const { authRoutes } = apiRoutes;
 const { LOGOUT } = authRoutes;
 const { handleApiError, handleApiSuccess } = handleApi;
 const { apiSuccessResponse } = applicationContent;
-const { logoutSuccess } = apiSuccessResponse;
+const { successResponse, errorResponse } = apiSuccessResponse;
 
 function useLogout() {
   const [loading, setLoading] = useState(false);
@@ -22,11 +22,11 @@ function useLogout() {
       }
       localStorage.removeItem("authenticated-user")
      setAuthUser(null);
-      handleApiSuccess(response?.data?.message || logoutSuccess);
+      handleApiSuccess(response?.data?.message || successResponse.logoutSuccess);
     } catch (error) {
       console.error(`Error While Logout User: ${error.message}`);
       handleApiError(
-        error?.response?.data?.message || "Error While Logout User"
+        error?.response?.data?.message || errorResponse.logoutError
       );
     } finally {
       setLoading(false);
