@@ -1,21 +1,38 @@
-import React from "react";
-import { AvatarComponent, DividerComponent, UsernameComponent } from "../index";
+import React, { useMemo } from "react";
+import { AvatarComponent, UsernameComponent } from "../index";
 import { useGetUsersForSidebar } from "../../hooks";
+import { randomEmojisGenerator } from "../../helper";
+import { useConversation } from "../../store";
 
 function ChatUserComponent() {
   const { users } = useGetUsersForSidebar();
+  const { selectedUser, setSelectedUser } = useConversation();
+
+  const emojiMap = useMemo(() => {
+    const map = {};
+    users.forEach((user) => {
+      map[user._id] = randomEmojisGenerator();
+    });
+    return map;
+  }, [users]);
+
   return (
     <>
       {users.map((user) => (
         <div
-          className="flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer"
+          className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer ${
+            selectedUser?._id === user?._id ? "bg-sky-500" : ""
+          }`}
           key={user._id}
+          onClick={() => setSelectedUser(user)}
         >
           <AvatarComponent userProfile={user?.profilePic} />
-          <UsernameComponent username={user?.fullName} emoji={"🐯"} />
+          <UsernameComponent
+            username={user?.fullName}
+            emoji={emojiMap[user._id]}
+          />
         </div>
       ))}
-      <DividerComponent styling={"divider my-0 py-0 h-1"} />
     </>
   );
 }

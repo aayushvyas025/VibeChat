@@ -16,7 +16,6 @@ function useGetUsersForSidebar() {
     try {
       const response = await API.get(GET);
       const users = response?.data?.filteredUsers;
-      console.log(users);
       apiError(users);
       setUsers(users);
     } catch (error) {

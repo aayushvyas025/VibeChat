@@ -1,20 +1,76 @@
 const Constant = Object.freeze({
   applicationContent: {
+    emojis: [
+      "👾",
+      "⭐",
+      "🌟",
+      "🎉",
+      "🎊",
+      "🎈",
+      "🎁",
+      "🎂",
+      "🎄",
+      "🎃",
+      "🎗",
+      "🎟",
+      "🎫",
+      "🎖",
+      "🏆",
+      "🏅",
+      "🥇",
+      "🥈",
+      "🥉",
+      "⚽",
+      "🏀",
+      "🏈",
+      "⚾",
+      "🎾",
+      "🏐",
+      "🏉",
+      "🎱",
+      "🏓",
+      "🏸",
+      "🥅",
+      "🏒",
+      "🏑",
+      "🏏",
+      "⛳",
+      "🏹",
+      "🎣",
+      "🥊",
+      "🥋",
+      "🎽",
+      "⛸",
+      "🥌",
+      "🛷",
+      "🎿",
+      "⛷",
+      "🏂",
+      "🏋️",
+      "🤼",
+      "🤸",
+      "🤺",
+      "⛹️",
+      "🤾",
+      "🏌️",
+      "🏇",
+      "🧘",
+    ],
     profilePicHolder:
       "https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png",
     apiSuccessResponse: {
       successResponse: {
-        signupSuccess:"User Signup Successfully",
-        logoutSuccess:"User Logout Successfully",
-        loginSuccess:"User Login Successfully",
+        signupSuccess: "User Signup Successfully",
+        logoutSuccess: "User Logout Successfully",
+        loginSuccess: "User Login Successfully",
       },
       errorResponse: {
-        signupError:"Error While Signup User",
-        loginError:"Error Invalid Credentials",
-        logoutError:"Error While Logout User",
-        getUsersError:"Error While Fetching Users"
-      }
-    }
+        signupError: "Error While Signup User",
+        loginError: "Error Invalid Credentials",
+        logoutError: "Error While Logout User",
+        getUsersError: "Error While Fetching Users",
+      },
+    },
   },
   envVariables: {
     backendURl:
@@ -24,16 +80,14 @@ const Constant = Object.freeze({
   },
   apiRoutes: {
     authRoutes: {
-      SIGNUP:`/auth/signup`,
-      LOGIN:`/auth/login`,
-      LOGOUT:`/auth/logout`
+      SIGNUP: `/auth/signup`,
+      LOGIN: `/auth/login`,
+      LOGOUT: `/auth/logout`,
     },
-    messageRoutes:{
-
+    messageRoutes: {},
+    userRoutes: {
+      GET: `/users`,
     },
-    userRoutes:{
-      GET:`/users`
-    }
   },
 });
 
