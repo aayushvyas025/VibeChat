@@ -1,4 +1,4 @@
-function UsernameComponent({ user, username, emoji }) {
+function UsernameComponent({ username, emoji }) {
   return (
     <>
       <div className="flex flex-col flex-1">
