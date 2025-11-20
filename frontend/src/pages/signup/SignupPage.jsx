@@ -6,6 +6,7 @@ import {
   HeadingComponent,
   InputComponent,
   LinkComponent,
+  SpinnerLoader,
   TextComponent,
 } from "../../components";
 import { useState } from "react";
@@ -113,8 +114,8 @@ function SignupPage() {
                 styling={
                   "btn btn-block btn-sm mt-2 hover:bg-blue-400 hover:text-white"
                 }
-                btnText={"Signup"}
-              />
+                disabled={loading}
+              > {loading ? <SpinnerLoader/> : "Signup" } </ButtonComponent>
             </div>
           </FormComponent>
                 </PagesLayout>
