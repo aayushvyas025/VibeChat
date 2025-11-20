@@ -10,7 +10,7 @@ const Constant = Object.freeze({
       },
       errorResponse: {
         signupError:"Error While Signup User",
-        loginError:"Error While Login User",
+        loginError:"Error Invalid Credentials",
         logoutError:"Error While Logout User"
       }
     }

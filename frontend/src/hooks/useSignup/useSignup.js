@@ -6,10 +6,10 @@ import {useAuthContext} from "../index";
 const { apiRoutes, applicationContent } = Constant;
 const { authRoutes } = apiRoutes;
 const { SIGNUP } = authRoutes;
-const { handleSignupInputErrors,apiError } = inputValidations;
+const { handleSignupInputErrors } = inputValidations;
 const { handleApiError, handleApiSuccess } = handleApi;
 const { apiSuccessResponse } = applicationContent;
-const { successResponse, errorResponse } = apiSuccessResponse;
+const { successResponse, errorResponse, apiError } = apiSuccessResponse;
 
 function useSignup() {
   const [loading, setLoading] = useState(false);

@@ -7,9 +7,9 @@ const { applicationContent, apiRoutes} = Constant;
 const {apiSuccessResponse} = applicationContent;
 const {successResponse, errorResponse} = apiSuccessResponse;
 const {authRoutes} = apiRoutes; 
-const {handleLoginInputErrors,apiError} = inputValidations; 
+const {handleLoginInputErrors} = inputValidations; 
 const {LOGIN} = authRoutes; 
-const {handleApiSuccess, handleApiError} = handleApi;
+const {handleApiSuccess, handleApiError, apiError} = handleApi;
 
 
 function useLogin() {

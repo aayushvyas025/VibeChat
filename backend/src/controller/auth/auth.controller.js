@@ -130,7 +130,7 @@ const authControllers = {
       response.cookie("jwtToken", "", {maxAge:0});
       response.status(200).json({success:true, message:"User Logout Successfully"});
     } catch (error) {
-      console.error(`Error While Lgout User: ${error?.message}`);
+      console.error(`Error While Logout User: ${error?.message}`);
       response.status(500).json({success:false, message:"Internal Server Error"}); 
     }
   },

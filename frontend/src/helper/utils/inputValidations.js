@@ -38,11 +38,7 @@ const inputValidations = {
 
     return true; 
   }, 
-  apiError:(response) => {
-    if(!response) {
-      throw new Error("Invalid response from the Server")
-    }
-  }
+ 
 };
 
 export default inputValidations;
