@@ -4,8 +4,8 @@ import { Constant,inputValidations, handleApi  } from "../../helper";
 import {useAuthContext} from "../index"
 
 const { applicationContent, apiRoutes} = Constant; 
-const {apiSuccessResponse} = applicationContent;
-const {successResponse, errorResponse} = apiSuccessResponse;
+const {apiResponses} = applicationContent;
+const {successResponse, errorResponse} =apiResponses;
 const {authRoutes} = apiRoutes; 
 const {handleLoginInputErrors} = inputValidations; 
 const {LOGIN} = authRoutes; 

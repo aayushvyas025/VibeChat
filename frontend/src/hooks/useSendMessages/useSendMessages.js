@@ -5,7 +5,8 @@ import { Constant, handleApi } from "../../helper";
 
 const { apiRoutes, applicationContent } = Constant;
 const { handleApiError, apiError } = handleApi;
-const { errorResponse } = applicationContent;
+const { apiResponses } = applicationContent;
+const {errorResponse} = apiResponses
 const { sendMessageError } = errorResponse;
 const { messageRoutes } = apiRoutes;
 const { GET } = messageRoutes;

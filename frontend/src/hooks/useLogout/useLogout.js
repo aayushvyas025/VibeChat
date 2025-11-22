@@ -7,8 +7,8 @@ const { apiRoutes, applicationContent } = Constant;
 const { authRoutes } = apiRoutes;
 const { LOGOUT } = authRoutes;
 const { handleApiError, handleApiSuccess } = handleApi;
-const { apiSuccessResponse } = applicationContent;
-const { successResponse, errorResponse } = apiSuccessResponse;
+const {apiResponses } = applicationContent;
+const { successResponse, errorResponse } =apiResponses;
 
 function useLogout() {
   const [loading, setLoading] = useState(false);
