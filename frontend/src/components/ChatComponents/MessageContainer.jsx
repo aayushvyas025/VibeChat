@@ -4,7 +4,7 @@ function MessageContainer() {
   return (
     <div className="md:min-w-[450px] h-full flex flex-col">
     <Messages />
-    <MessageInput />
+    <MessageInput placeholder={"Enter your messages here..."} />
     </div>
   )
 }
