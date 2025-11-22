@@ -9,7 +9,7 @@ const { apiResponses } = applicationContent;
 const {errorResponse} = apiResponses
 const { sendMessageError } = errorResponse;
 const { messageRoutes } = apiRoutes;
-const { GET } = messageRoutes;
+const { CREATE } = messageRoutes;
 
 function useSendMessages() {
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ function useSendMessages() {
   const sendMessagesApi = async (message) => {
     setLoading(true);
     try {
-      const response = await API.post(GET(selectedUser._id), { message });
+      const response = await API.post(CREATE(selectedUser._id), { message });
       const newMessages = response?.data?.newMessage;
       console.log(newMessages);
       apiError(newMessages);

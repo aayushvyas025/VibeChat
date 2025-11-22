@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormComponent,ButtonComponent } from "../index";
+import { FormComponent,ButtonComponent, SpinnerLoader, IconComponent } from "../index";
 import { BsSend } from "react-icons/bs";
 import { useSendMessages } from "../../hooks";
 
@@ -9,6 +9,7 @@ function MessagesInput({placeholder}) {
 
   async function submitFormHandle(event) {
     event.preventDefault();
+    if(!message.trim()) return;
     await sendMessagesApi(message);
     setMessage("");
 
@@ -24,7 +25,9 @@ function MessagesInput({placeholder}) {
           value={message}
           onChange={(event) => setMessage(event.target.value)}
         />
-        <ButtonComponent type="submit" btnIcon={BsSend} styling={"absolute inset-y-0 end-0 flex items-center pe-3"} />
+        <ButtonComponent type="submit"  styling={"absolute inset-y-0 end-0 flex items-center pe-3"}>
+          {loading ? <SpinnerLoader /> : <IconComponent icon={BsSend} />}
+        </ButtonComponent>
       </div>
     </FormComponent>
   );
