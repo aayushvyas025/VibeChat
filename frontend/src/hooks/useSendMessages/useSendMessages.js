@@ -20,7 +20,6 @@ function useSendMessages() {
     try {
       const response = await API.post(CREATE(selectedUser._id), { message });
       const newMessages = response?.data?.newMessage;
-      console.log(newMessages);
       apiError(newMessages);
       setMessages([...messages, newMessages]);
     } catch (error) {

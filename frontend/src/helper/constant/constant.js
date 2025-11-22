@@ -69,7 +69,8 @@ const Constant = Object.freeze({
         loginError: "Error Invalid Credentials",
         logoutError: "Error While Logout User",
         getUsersError: "Error While Fetching Users",
-        sendMessageError:"Error While Sending Message"
+        sendMessageError:"Error While Sending Message",
+        getMessageError:"Error While Fetch Message"
       },
     },
   },
