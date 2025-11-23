@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Constant, timeFormatter } from "../../helper";
 import { useConversation } from "../../store";
 
 const { applicationContent } = Constant;
 const { profilePicHolder } = applicationContent;
 
-function Conversation({ message, authUser }) {
+const Conversation = ({ message, authUser }) => {
   const {selectedUser} = useConversation()
   const fromMe = message.senderId === authUser._id;
   const chatClassName = fromMe ? "chat-end" : "chat-start";
