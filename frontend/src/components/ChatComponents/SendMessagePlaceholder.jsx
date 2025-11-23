@@ -2,7 +2,6 @@ import React from "react";
 import { TextComponent } from "../index";
 
 function SendMessagePlaceholder({ loading, messageLength }) {
-  console.log(loading, messageLength);
   return (
     <>
       {!loading && messageLength === 0 && (
