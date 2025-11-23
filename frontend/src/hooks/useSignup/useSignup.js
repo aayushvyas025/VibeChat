@@ -7,9 +7,9 @@ const { apiRoutes, applicationContent } = Constant;
 const { authRoutes } = apiRoutes;
 const { SIGNUP } = authRoutes;
 const { handleSignupInputErrors } = inputValidations;
-const { handleApiError, handleApiSuccess } = handleApi;
+const { handleApiError, handleApiSuccess,apiError } = handleApi;
 const {apiResponses } = applicationContent;
-const { successResponse, errorResponse, apiError } =apiResponses;
+const { successResponse, errorResponse } =apiResponses;
 
 function useSignup() {
   const [loading, setLoading] = useState(false);

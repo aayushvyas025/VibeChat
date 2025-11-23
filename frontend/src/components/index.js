@@ -23,4 +23,6 @@ export {default as Messages} from "./ChatComponents/Messages";
 export {default as NoChatSelected} from "./ChatComponents/NoChatSelected";
 export {default as GenderCheckboxComponent} from "./InputComponents/GenderCheckboxComponent";
 export {default as LogoutButtonComponent} from "./ButtonComponents/LogoutButtonComponent";
-export {default as SpinnerLoader} from "./LoaderComponents/SpinnerLoader"
+export {default as SpinnerLoader} from "./LoaderComponents/SpinnerLoader";
+export {default as MessageLoadingSkeleton} from "./SkeletonComponents/MessageLoadingSkeleton";
+export {default as SendMessagePlaceholder} from "./ChatComponents/SendMessagePlaceholder"

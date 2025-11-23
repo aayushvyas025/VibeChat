@@ -21,7 +21,7 @@ function useGetMessages() {
       const response = await API.get(GET(selectedUser._id));
       const userAllMessages = response?.data?.conversation;
       apiError(userAllMessages);
-      setMessages([...messages, userAllMessages]);
+      setMessages(userAllMessages);
     } catch (error) {
       console.error(`Error While fetch Messages: ${error.message}`);
       handleApiError(error?.response?.data?.message || getMessageError);
@@ -34,7 +34,7 @@ function useGetMessages() {
     if (selectedUser?._id) {
       getMessageApi();
     }
-  }, []);
+  }, [selectedUser]);
 
   return { loading, messages };
 }
