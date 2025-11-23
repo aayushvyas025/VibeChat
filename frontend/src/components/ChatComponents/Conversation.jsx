@@ -1,5 +1,5 @@
 import React from "react";
-import { Constant } from "../../helper";
+import { Constant, timeFormatter } from "../../helper";
 import { useConversation } from "../../store";
 
 const { applicationContent } = Constant;
@@ -23,7 +23,7 @@ function Conversation({ message, authUser }) {
         {message?.message}
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
-        {message.createdAt}
+        {timeFormatter(message.createdAt)}
       </div>
     </div>
   );
