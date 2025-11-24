@@ -4,9 +4,9 @@ import { Constant } from "../../index.js";
 
 const {envVariables} = Constant; 
 const {backendPort} = envVariables; 
-function databaseConnection(app) {
+function databaseConnection(server) {
  connectToDB().then(() => {
-    app.listen(backendPort, () => {
+    server.listen(backendPort, () => {
         console.log(`Your Server Successfully Running on http://localhost:${backendPort}`)
     })
  }).catch((error) => {

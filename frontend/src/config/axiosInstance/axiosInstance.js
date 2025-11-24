@@ -2,10 +2,10 @@ import axios from "axios";
 import { Constant } from "../../helper";
 
 const {envVariables} = Constant;
-const {backendURl} = envVariables;
+const {backendUrl} = envVariables;
 
 const API = axios.create({
- baseURL:backendURl,
+ baseURL:backendUrl,
  withCredentials: true
 }); 
 

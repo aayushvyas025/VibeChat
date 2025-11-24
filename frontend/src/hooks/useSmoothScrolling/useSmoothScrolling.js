@@ -1,17 +1,19 @@
-import { useEffect, useRef } from "react";
+import {  useLayoutEffect, useRef } from "react";
 import { useConversation } from "../../store";
 
 function useSmoothScrolling() {
-  const lastMessageReference = useRef(); 
-  const {messages} = useConversation();
+  const lastMessageReference = useRef();
+  const { messages } = useConversation();
 
-    useEffect(() => {
-        setTimeout(() => {
-           lastMessageReference.current.scrollIntoView({behavior:"smooth"});
-        },100)
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      if (lastMessageReference.current) {
+        lastMessageReference.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  }, [messages]);
 
-    }, [messages])
-    return {lastMessageReference}
+  return { lastMessageReference };
 }
 
-export default useSmoothScrolling; 
+export default useSmoothScrolling;
