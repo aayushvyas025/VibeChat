@@ -6,4 +6,5 @@ export {default as useGetUsersForSidebar} from "./useGetUsersForSidebar/useGetUs
 export {default as useSendMessages} from "./useSendMessages/useSendMessages";
 export {default as useGetMessages} from "./useGetMessages/useGetMessages";
 export {default as useSmoothScrolling} from "./useSmoothScrolling/useSmoothScrolling";
-export {default as useSocketContext} from "./useSocketContext/useSocketContext"
+export {default as useSocketContext} from "./useSocketContext/useSocketContext";
+export {default as useListenMessage} from "./useListenMessage/useListenMessage"

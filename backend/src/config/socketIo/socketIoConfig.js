@@ -35,4 +35,4 @@ socketIo.on("connection", (socket) => {
     })
 })
 
-export default {app, server, socketIo}
+export default {app, server, socketIo, userSocketMap}

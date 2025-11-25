@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
 import { Conversation, Message } from "../../model/index.js";
+import { socketIoConfig } from "../../config/index.js";
+import { getReceiverSocketId } from "../../helper/index.js";
+
+
 
 const messageControllers = {
   sendMessage: async (request, response) => {
     const { id: receiverId } = request.params;
     const { message } = request.body;
     const senderId = request.user._id;
+    const {userSocketMap, socketIo} = socketIoConfig;
 
     if (
       !mongoose.Types.ObjectId.isValid(receiverId) ||
@@ -46,6 +51,11 @@ const messageControllers = {
       }
 
       await Promise.all([conversation.save(), newMessage.save()]);
+
+    const receiverSocketId = getReceiverSocketId(receiverId, userSocketMap); 
+    if(receiverSocketId) {
+       socketIo.to(receiverSocketId).emit("newMessage", newMessage);
+    }
 
       response.status(201).json({
         success: true,
