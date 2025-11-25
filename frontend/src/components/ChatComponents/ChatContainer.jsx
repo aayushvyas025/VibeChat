@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import {ChatHeader, MessageContainer} from "../index"
 import { useConversation } from '../../store'
 function ChatContainer() {
