@@ -1,4 +1,3 @@
-import React, { forwardRef } from "react";
 import { Constant, timeFormatter } from "../../helper";
 import { useConversation } from "../../store";
 

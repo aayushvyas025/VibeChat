@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckboxComponent } from "../index";
 
 function GenderCheckboxComponent({ onCheckboxChange, userGender }) {

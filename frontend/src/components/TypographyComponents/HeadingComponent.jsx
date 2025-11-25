@@ -1,5 +1,3 @@
-import React from "react";
-
 function HeadingComponent({ headingLevel = "h1", styling, headingTitle, children }) {
   const validationHeading = ["h1", "h2", "h3", "h4", "h5", "h6"];
 

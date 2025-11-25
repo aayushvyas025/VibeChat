@@ -1,4 +1,3 @@
-import React from "react";
 import { Constant } from "../../helper";
 
 const { applicationContent } = Constant;

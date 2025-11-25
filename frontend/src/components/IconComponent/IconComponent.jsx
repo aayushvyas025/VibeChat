@@ -1,5 +1,3 @@
-import React from 'react'
-
 function IconComponent({icon, iconSize, styling}) {
 
     if(!icon) {

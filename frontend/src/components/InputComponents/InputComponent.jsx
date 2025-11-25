@@ -1,5 +1,3 @@
-import React from "react";
-
 function InputComponent({ label, children, type, style, placeholder, value, onChangeHandler }) {
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import  { useMemo } from "react";
 import { AvatarComponent, UsernameComponent } from "../index";
 import { useGetUsersForSidebar, useSocketContext } from "../../hooks";
 import { randomEmojisGenerator } from "../../helper";

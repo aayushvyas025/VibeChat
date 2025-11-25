@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FormComponent,ButtonComponent, SpinnerLoader, IconComponent } from "../index";
 import { BsSend } from "react-icons/bs";
 import { useSendMessages } from "../../hooks";

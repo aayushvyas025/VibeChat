@@ -1,5 +1,3 @@
-import React from "react";
-
 function TextComponent({ textType = "p", styling, text }) {
   const validationText = ["p", "span"];
 

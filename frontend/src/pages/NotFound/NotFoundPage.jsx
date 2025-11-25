@@ -1,4 +1,4 @@
-import { MainLayout, PagesLayout } from "../../layout/index";
+import { MainLayout } from "../../layout/index";
 import {
   HeadingComponent,
   LinkComponent,

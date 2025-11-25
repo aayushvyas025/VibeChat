@@ -1,5 +1,3 @@
-import React from 'react'
-
 function ChatHeader({fullName}) {
   return (
     <div className='bg-slate-500 px-4 py-2 mb-2'>

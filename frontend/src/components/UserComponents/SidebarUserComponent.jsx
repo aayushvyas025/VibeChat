@@ -1,4 +1,3 @@
-import React from "react";
 import { ChatUserComponent, SpinnerLoader } from "../index";
 import { useGetUsersForSidebar } from "../../hooks";
 

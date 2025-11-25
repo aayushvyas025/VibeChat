@@ -1,5 +1,3 @@
-import React from "react";
-
 function CheckboxComponent({ label, inputGender, onChangHandler,checked,styling }) {
   return (
     <div className="form-control">
