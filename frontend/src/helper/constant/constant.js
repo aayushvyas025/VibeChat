@@ -79,6 +79,7 @@ const Constant = Object.freeze({
       import.meta.env.VITE_APPLICATION_MODE === "development"
         ? import.meta.env.VITE_BACKEND_BASE_URL
         : "/vibechat/api/v1",
+    socketBackendUrl:import.meta.env.VITE_BACKEND_SOCKET_URL
   },
   apiRoutes: {
     authRoutes: {

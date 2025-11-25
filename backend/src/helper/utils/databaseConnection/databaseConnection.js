@@ -1,10 +1,12 @@
-import { connectToDB } from "../../../config/index.js";
+import { connectToDB, socketIoConfig } from "../../../config/index.js";
 import { Constant } from "../../index.js";
 
 
 const {envVariables} = Constant; 
 const {backendPort} = envVariables; 
-function databaseConnection(server) {
+const {server} = socketIoConfig;
+
+function databaseConnection() {
  connectToDB().then(() => {
     server.listen(backendPort, () => {
         console.log(`Your Server Successfully Running on http://localhost:${backendPort}`)

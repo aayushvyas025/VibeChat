@@ -4,7 +4,7 @@ import { commonMiddleware, routesMiddleware } from "./src/middleware/index.js";
 import { socketIoConfig } from "./src/config/index.js";
 
 const {jsonParser, parseCookies, corsConnection} = commonMiddleware; 
-const {app,server} = socketIoConfig; 
+const {app} = socketIoConfig; 
 
 jsonParser(app, express);
 parseCookies(app);
@@ -14,5 +14,5 @@ routesMiddleware.auth(app);
 routesMiddleware.message(app);
 routesMiddleware.user(app); 
 
-databaseConnection(server)
+databaseConnection()
 

@@ -7,8 +7,8 @@ const Constant = Object.freeze({
         mongodbUri:process.env.MONGODB_URI,
         backendPort:process.env.BACKEND_PORT,
         jwtSecret:process.env.JWT_SECRET,
-        nodeEnvironment:process.env.NODE_ENVIORNMENT,
-        frontendUrl:process.env.FRONTEND_URL
+        nodeEnvironment:process.env.NODE_ENVIRONMENT,
+        frontendUrl:process.env.FRONTEND_URL,
     },
     apisRoutes:{
         BASE_URL:`/vibechat/api/v1`,
