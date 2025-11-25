@@ -1,8 +1,8 @@
 import React from 'react'
 
-function PagesLayout({children,pagelayout}) {
+function PagesLayout({children,pageLayout}) {
   return (
-    <div className={pagelayout}>{children}</div>
+    <div className={pageLayout}>{children}</div>
   )
 }
 

@@ -44,7 +44,7 @@ function SignupPage() {
   return (
     <MainLayout>
       <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-        <PagesLayout pagelayout={"w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0"}>
+        <PagesLayout pageLayout={"w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0"}>
           <HeadingComponent
             headingLevel={"h1"}
             styling={"text-3xl font-semibold text-center text-gray-300"}
