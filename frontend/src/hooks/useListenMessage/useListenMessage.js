@@ -8,6 +8,7 @@ function useListenMessage() {
   
   useEffect(() => {
     socketConnection?.on("newMessage",(newMessage) => {
+        newMessage.shouldShake = true; 
         setMessages([...messages, newMessage])
     }); 
     
