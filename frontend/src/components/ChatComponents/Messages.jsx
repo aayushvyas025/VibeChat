@@ -3,13 +3,14 @@ import {
   MessageLoadingSkeleton,
   SendMessagePlaceholder,
 } from "../index";
-import { useAuthContext, useGetMessages, useSmoothScrolling } from "../../hooks";
+import { useAuthContext, useGetMessages, useListenMessage, useSmoothScrolling } from "../../hooks";
 
 
 function Messages() {
   const { authUser } = useAuthContext();
   const { loading, messages } = useGetMessages();
   const {lastMessageReference} = useSmoothScrolling();
+  useListenMessage();
  
   return (
     <div className="px-4 flex-1 overflow-y-auto">

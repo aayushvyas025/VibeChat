@@ -7,8 +7,7 @@ import { useConversation } from "../../store";
 function ChatUserComponent() {
   const { users } = useGetUsersForSidebar();
   const { selectedUser, setSelectedUser } = useConversation();
- const {onlineUsers} = useSocketContext();
- const isOnline = onlineUsers.includes(users._id) 
+  const { onlineUsers } = useSocketContext();
 
   const emojiMap = useMemo(() => {
     const map = {};
@@ -28,7 +27,10 @@ function ChatUserComponent() {
           key={user._id}
           onClick={() => setSelectedUser(user)}
         >
-          <AvatarComponent userProfile={user?.profilePic} userOnline={isOnline} />
+          <AvatarComponent
+            userProfile={user?.profilePic}
+            userOnline={onlineUsers.includes(user._id)}
+          />
           <UsernameComponent
             username={user?.fullName}
             emoji={emojiMap[user._id]}
